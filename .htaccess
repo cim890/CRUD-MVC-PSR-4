@@ -1,0 +1,18 @@
+
+Options -Indexes
+DirectoryIndex public_html/index.php
+
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+	RewriteBase /crud_mvc_psr4/public_html
+	
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+
+	RewriteRule ^(.+)$ index.php?url=$1 [L]
+	
+
+</IfModule> 
